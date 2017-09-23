@@ -4,3 +4,6 @@ J:\GitRepo\C_SharpExample\C_SharpExample\bin\Debug\C_SharpExample.pdb
 J:\GitRepo\C_SharpExample\C_SharpExample\obj\Debug\C_SharpExample.csprojResolveAssemblyReference.cache
 J:\GitRepo\C_SharpExample\C_SharpExample\obj\Debug\C_SharpExample.exe
 J:\GitRepo\C_SharpExample\C_SharpExample\obj\Debug\C_SharpExample.pdb
+J:\MYGit\NewGit\C_Sharp_Sample_Code\C_SharpExample\C_SharpExample\bin\Debug\C_SharpExample.exe.config
+J:\MYGit\NewGit\C_Sharp_Sample_Code\C_SharpExample\C_SharpExample\obj\Debug\C_SharpExample.exe
+J:\MYGit\NewGit\C_Sharp_Sample_Code\C_SharpExample\C_SharpExample\obj\Debug\C_SharpExample.pdb
