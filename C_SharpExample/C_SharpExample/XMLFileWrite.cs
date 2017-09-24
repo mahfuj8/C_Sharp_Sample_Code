@@ -48,5 +48,43 @@ namespace C_SharpExample
             xmlDoc.Save(@"G:\xamarin code\test-doc.xml");
 
         }
+        
+        
+        
+        
+        
+        public void CreateConnectionStringUsingXML()
+        {
+                    XmlDocument xmlDoc1 = new XmlDocument();
+            xmlDoc1.Load(AppconfileLocation);
+
+            XmlNode rootNode = xmlDoc1.CreateElement("connectionStrings");
+
+            XmlNode userNode = xmlDoc1.CreateElement("add");
+            XmlAttribute name = xmlDoc1.CreateAttribute("name");
+            name.Value = "YOUR CONNECTION NAME";
+            userNode.Attributes.Append(name);
+
+
+            XmlAttribute providerName = xmlDoc1.CreateAttribute("providerName");
+            providerName.Value = "System.Data.SqlClient";
+            userNode.Attributes.Append(providerName);
+
+
+            XmlAttribute connectionString = xmlDoc1.CreateAttribute("connectionString");
+            connectionString.Value = connectionBuilder.ConnectionString;
+            userNode.Attributes.Append(connectionString);
+
+            //add root node
+            rootNode.AppendChild(userNode);
+
+            xmlDoc1.DocumentElement.AppendChild(rootNode);
+
+            xmlDoc1.Save(AppconfileLocation);
+        
+        
+        }
+        
+        
     }
 }
