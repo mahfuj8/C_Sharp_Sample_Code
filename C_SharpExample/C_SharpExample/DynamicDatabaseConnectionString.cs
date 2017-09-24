@@ -40,16 +40,10 @@ namespace C_SharpExample
                 //Check Connection string Element available
                 XmlDocument XmlDoc = new XmlDocument();
                 XmlDoc.Load(AppconfileLocation);
-                var ConnectionStringElement = XmlDoc.GetElementsByTagName("connectionStrings");
-
-                if (ConnectionStringElement == null)
-                {
-                    XmlDocument xmlDoc1 = new XmlDocument();
-                    XmlNode rootNode = xmlDoc1.CreateElement("connectionStrings");
-                    xmlDoc1.AppendChild(rootNode);
-
-                }
-
+                
+                
+                //get element by tag name
+               // var ConnectionStringElement = XmlDoc.GetElementsByTagName("connectionStrings");
 
                 //Retreive connection string setting
                 var connectionString = config.ConnectionStrings.ConnectionStrings["ConnectionStringName"];
