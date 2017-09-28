@@ -1,0 +1,9 @@
+F:\ExcelFileRead\ExcelFileRead\bin\Debug\ExcelFileRead.exe.config
+F:\ExcelFileRead\ExcelFileRead\bin\Debug\ExcelFileRead.exe
+F:\ExcelFileRead\ExcelFileRead\bin\Debug\ExcelFileRead.pdb
+F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.csprojResolveAssemblyReference.cache
+F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.ExcelFileRead.resources
+F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.Properties.Resources.resources
+F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.csproj.GenerateResource.Cache
+F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.exe
+F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.pdb
