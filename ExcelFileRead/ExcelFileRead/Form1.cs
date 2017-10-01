@@ -164,11 +164,11 @@ namespace ExcelFileRead
 
 
 
-        public static DataTable getExcelFile(string fileLocation)
+        public DataTable getExcelFile(string fileLocation)
         {
 
             DataTable dt = new DataTable();
-            DataColumn clID = new DataColumn("ID", typeof(string));
+            DataColumn clID = new DataColumn("serial", typeof(string));
             dt.Columns.Add(clID);
            
             //Create COM Objects. Create a COM object for everything that is referenced
@@ -179,12 +179,15 @@ namespace ExcelFileRead
 
             int rowCount = xlRange.Rows.Count;
             int colCount = xlRange.Columns.Count;
+         
+           
 
             //iterate over the rows and columns and print to the console as it appears in the file
             //excel is not zero based!!
             for (int i = 1; i <= rowCount; i++)
             {
 
+                int progree = i * 100 / rowCount;
                 List<string> lt=new List<string>();
                 for (int j = 1; j <= colCount; j++)
                 {
@@ -197,7 +200,7 @@ namespace ExcelFileRead
                         }
                         continue;
                     }
-                    var data = xlRange.Cells[i, j].Value2.ToString();
+                    var data = xlRange.Cells[i, j].Value2==null? "": xlRange.Cells[i, j].Value2.ToString();
                     if (i == 1)
                     {
                         string whiteSapceRemove = Regex.Replace(data, @"[^0-9a-zA-Z]+", "");
@@ -216,8 +219,8 @@ namespace ExcelFileRead
                     dt.Rows.Add(lt.ToArray());
                     //dt.Rows.Add("1", "2", "3", "4");
                 }
-            
 
+                toolStripProgressBar.Value = progree;
 
             }
 
@@ -259,14 +262,24 @@ namespace ExcelFileRead
 
         private void btnSaveDatabase_Click(object sender, EventArgs e)
         {
-            List<string> lstQuery = new List<string>();
+
+            string tableName=txttableName.Text;
+            if (tableName == "")
+            {
+                tableName = "EXCELFILEDATA";
+            }
+            else
+            {
+                tableName =Regex.Replace(tableName, @"[^0-9a-zA-Z]+", "");
+            }
+
             int Row = dgdShowExcel.Rows.Count;
             int Column = dgdShowExcel.Columns.Count;
 
-            bool isExists = isExist("Select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='ExcelFile'");
+            bool isExists = isExist("Select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME='"+ tableName + "'");
             if (isExists)
             {
-                ExcuteNonQuery("drop table ExcelFile");
+                ExcuteNonQuery("drop table "+ tableName + "");
                 createTable();  
             }
             else
@@ -277,9 +290,9 @@ namespace ExcelFileRead
             var dta=(DataTable)dgdShowExcel.DataSource;
 
 
-            BulkCopy(dta, "ExcelFile");
-           
+            BulkCopy(dta, tableName);
 
+            MessageBox.Show("DataSave Successful");
 
 
 

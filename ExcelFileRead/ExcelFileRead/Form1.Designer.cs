@@ -42,6 +42,8 @@
             this.gbconnectionString = new System.Windows.Forms.GroupBox();
             this.lblConnectionOK = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txttableName = new System.Windows.Forms.TextBox();
             this.dgdShowExcel = new System.Windows.Forms.DataGridView();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
@@ -181,18 +183,36 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txttableName);
             this.groupBox1.Controls.Add(this.dgdShowExcel);
             this.groupBox1.Controls.Add(this.btnBrowse);
             this.groupBox1.Controls.Add(this.btnUpload);
             this.groupBox1.Controls.Add(this.btnSaveDatabase);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtFileUpload);
-            this.groupBox1.Location = new System.Drawing.Point(12, 134);
+            this.groupBox1.Location = new System.Drawing.Point(14, 134);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(813, 385);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "UploadexcelFile";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 355);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Table Name";
+            // 
+            // txttableName
+            // 
+            this.txttableName.Location = new System.Drawing.Point(94, 351);
+            this.txttableName.Name = "txttableName";
+            this.txttableName.Size = new System.Drawing.Size(175, 20);
+            this.txttableName.TabIndex = 14;
             // 
             // dgdShowExcel
             // 
@@ -234,9 +254,9 @@
             this.btnSaveDatabase.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnSaveDatabase.FlatAppearance.BorderSize = 0;
             this.btnSaveDatabase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSaveDatabase.Location = new System.Drawing.Point(16, 349);
+            this.btnSaveDatabase.Location = new System.Drawing.Point(280, 349);
             this.btnSaveDatabase.Name = "btnSaveDatabase";
-            this.btnSaveDatabase.Size = new System.Drawing.Size(118, 23);
+            this.btnSaveDatabase.Size = new System.Drawing.Size(92, 23);
             this.btnSaveDatabase.TabIndex = 12;
             this.btnSaveDatabase.Text = "Save Database";
             this.btnSaveDatabase.UseVisualStyleBackColor = false;
@@ -336,6 +356,8 @@
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
         private System.Windows.Forms.Label lblConnectionOK;
         private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txttableName;
     }
 }
 

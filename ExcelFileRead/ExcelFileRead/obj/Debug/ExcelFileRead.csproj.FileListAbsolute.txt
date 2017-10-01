@@ -7,3 +7,12 @@ F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.Properties.Resources.reso
 F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.csproj.GenerateResource.Cache
 F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.exe
 F:\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.pdb
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\bin\Debug\ExcelFileRead.exe.config
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.exe
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.pdb
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\bin\Debug\ExcelFileRead.exe
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\bin\Debug\ExcelFileRead.pdb
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.csprojResolveAssemblyReference.cache
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.ExcelFileRead.resources
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.Properties.Resources.resources
+J:\MYGit\NewGit\C_Sharp_Sample_Code\ExcelFileRead\ExcelFileRead\obj\Debug\ExcelFileRead.csproj.GenerateResource.Cache
