@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //string subPath = "~/project/Folder"; // your code goes here
+
+            //bool exists = System.IO.Directory.Exists(Server.MapPath(subPath));
+
+            //if (!exists)
+            //    System.IO.Directory.CreateDirectory(Server.MapPath(subPath));
+
+
+
+            //-------------------startLog-----------------------------------------
+
+            string RootPath=@"c:\log";
+            bool exists = System.IO.Directory.Exists(RootPath);
+            if (!exists)
+            {
+              System.IO.Directory.CreateDirectory(RootPath);
+            }
+            var fileName = DateTime.Now.ToString("yyyy-MM-dd") + ".txt";
+            string Path = RootPath + @"\" + fileName;
+           
+
+
+            //write file in txt File
+            var fileStream = new FileStream(Path, FileMode.Append, FileAccess.Write);
+            using (StreamWriter writetext = new StreamWriter(fileStream))
+            {          
+               writetext.WriteLine("writing in text file");           
+            }
+
+            //-------------------------------End --------------------------------
+
+
+
+            //Read file in txt file
+            string text;
+            var filestream1 = new FileStream(Path, FileMode.Open, FileAccess.Read);
+            using (var streamreader = new StreamReader(filestream1, Encoding.UTF8))
+            {
+               text = streamreader.ReadToEnd();
+            }
+
+
+            //show in textbox
+            Console.WriteLine(text);
+            Console.Read();
+
+        }
+    }
+}
