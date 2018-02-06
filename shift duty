@@ -1,0 +1,246 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Shift
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            var dsee = new TimeSpan(5, 100, 200);
+
+            string Date = "12-12-2017 16:12:00";
+            string last = "08:00:00";
+            string Today = "17:00:00";
+            string TodayEnd = "02:00:00";
+            string nextStart = "10:00:00";
+
+
+            DateTime d = Convert.ToDateTime(Date);
+            TimeSpan e = Convert.ToDateTime(Today).TimeOfDay;
+            DateTime sStart = new DateTime(d.Year, d.Month, d.Day, e.Hours, e.Minutes, e.Seconds);
+
+
+            double gap = Convert_Time_To_Double(last, Today);
+            DateTime AttStart = sStart.AddHours(-gap/2);
+
+
+            double gap2 = Convert_Time_To_Double(Today, TodayEnd);
+            DateTime MidAttdance = sStart.AddHours(gap2 / 2);
+            DateTime AttEnd = sStart.AddHours(gap2);
+
+
+
+            double gap3 = Convert_Time_To_Double(TodayEnd, nextStart);
+            DateTime lastEnd = AttEnd.AddHours(gap3/2);
+
+
+            
+
+
+
+
+
+            string Datet = "12-11-2017 16:12:00";
+            string Datet1 = "12-12-2017 8:12:00";
+
+
+            DateTime dy = Convert.ToDateTime(Datet);
+            DateTime dy1 = Convert.ToDateTime(Datet1);
+
+            TimeSpan dseerr = (dy1 - dy);
+
+
+
+
+            DateTime Datetime;
+            if (DateTime.TryParse(Date, out Datetime))
+            {
+
+ 
+                TimeSpan f = Convert.ToDateTime(last).TimeOfDay;
+                TimeSpan h = Convert.ToDateTime(TodayEnd).TimeOfDay;
+                TimeSpan i = Convert.ToDateTime(nextStart).TimeOfDay;
+
+
+          
+
+
+
+              
+
+
+                
+               
+
+
+
+
+
+
+
+
+            }
+
+
+        
+
+
+
+
+
+
+
+
+
+            DateTime timeValue1 = Convert.ToDateTime("11:00:00 PM");
+            DateTime timeValue2 = Convert.ToDateTime("06:00:00 AM");
+
+            var difference = timeValue1 - timeValue2;
+
+
+            string te = difference.Hours.ToString() + "." + difference.Minutes.ToString();
+
+
+
+            double cod = Convert.ToDouble(te);
+
+            var cs = cod / 2;
+
+
+            DateTime Intime = Convert.ToDateTime("18:23:00");
+           var csde= Intime.AddHours(-cs);
+
+
+
+
+
+
+            string time = "18:23:00";
+
+            DateTime dateTime = DateTime.ParseExact(time, "HH:mm:ss", CultureInfo.InvariantCulture);
+
+            DateTime timeValue = Convert.ToDateTime("01:00:00 PM");
+
+            var t = timeValue.ToString("HH:mm:ss");
+
+            DateTime result;
+
+            DateTime.TryParse("18:23:00", out result);
+
+            var c=dateTime.ToString("hh:mm:ss tt", CultureInfo.CreateSpecificCulture("hr-HR"));
+
+
+
+        }
+
+
+
+        public static double Convert_Time_To_Double(string last, string next)
+        {
+
+            TimeSpan difference = timeCalculator(last, next);
+            string dvalue = difference.Hours.ToString() + "." + difference.Minutes.ToString();
+            double conValue = Convert.ToDouble(dvalue);           
+            return conValue;
+        }
+
+
+
+
+
+
+        /// <summary>
+        /// Calculate time 
+        /// </summary>
+        /// <param name="old">"11:00:00 PM"</param>
+        /// <param name="present">"06:00:00 AM"</param>
+        /// <returns> TimeSpan fromat </returns>
+
+        public static TimeSpan timeCalculator(string last, string next)
+        {
+
+            TimeSpan old = Convert.ToDateTime(last).TimeOfDay;
+            TimeSpan present = Convert.ToDateTime(next).TimeOfDay;
+
+
+            int Old_HOur = old.Hours;
+            int Old_Minute = old.Minutes;
+            int Old_Second = old.Seconds;
+           
+
+            int parsent_HOur = present.Hours;
+            int parsent_Minute = present.Minutes;
+            int parsent_Second = present.Seconds;
+
+
+
+            int diffenceHour = 0;
+            int differceMinute = 0;
+            int diffenceSecond = 0;
+          
+
+
+            if (Old_HOur > parsent_HOur)
+            {
+                diffenceHour = (24 - Old_HOur) + parsent_HOur;
+            }
+            else
+            {
+                diffenceHour = parsent_HOur - Old_HOur;
+            }
+
+
+            //--------- minute ----------------
+
+            if (Old_Minute > parsent_Minute)
+            {
+                differceMinute = (59 - Old_Minute) + parsent_Minute;
+            }
+            else
+            {
+                differceMinute = parsent_Minute - Old_Minute;
+            }
+
+
+
+            //--------------second---------------
+            if (Old_Second > parsent_Second)
+            {
+                diffenceSecond = (59 - Old_Second) + parsent_Second;
+            }
+            else
+            {
+                diffenceSecond = parsent_Second - Old_Second;
+
+            }
+
+            TimeSpan difference = new TimeSpan(diffenceHour, differceMinute, diffenceSecond);
+
+            return difference;
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+    
+
+
+
+}
