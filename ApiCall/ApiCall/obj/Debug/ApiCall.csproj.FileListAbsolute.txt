@@ -1,0 +1,6 @@
+c:\users\kscl05\documents\visual studio 2015\Projects\ApiCall\ApiCall\bin\Debug\ApiCall.exe.config
+c:\users\kscl05\documents\visual studio 2015\Projects\ApiCall\ApiCall\bin\Debug\ApiCall.exe
+c:\users\kscl05\documents\visual studio 2015\Projects\ApiCall\ApiCall\bin\Debug\ApiCall.pdb
+c:\users\kscl05\documents\visual studio 2015\Projects\ApiCall\ApiCall\obj\Debug\ApiCall.csprojResolveAssemblyReference.cache
+c:\users\kscl05\documents\visual studio 2015\Projects\ApiCall\ApiCall\obj\Debug\ApiCall.exe
+c:\users\kscl05\documents\visual studio 2015\Projects\ApiCall\ApiCall\obj\Debug\ApiCall.pdb
