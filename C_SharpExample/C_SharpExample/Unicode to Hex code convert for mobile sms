@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleUnicode
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             
+            string a = "আমার সোনার বাংলা আমি তোমায় ভালোবাসি।";
+
+            string ConvertCode = stringToHex(a);
+            Console.WriteLine(String.Format("{0}", ConvertCode));
+            Console.Read();
+        }
+
+
+        public static string stringToHex(string unicode)
+        {
+            string hex = "";
+            foreach (char c in unicode)
+            {
+                int tmp = c;
+                hex += String.Format("{0:x4}", (uint)System.Convert.ToUInt32(tmp.ToString()));
+            }
+            return hex;
+        }
+    }
+}
+
+// output :098609ae09be09b0002009b809cb09a809be09b0002009ac09be098209b209be0020098609ae09bf002009a409cb09ae09be09df002009ad09be09b209cb09ac09be09b809bf0964
