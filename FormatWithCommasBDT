@@ -1,0 +1,33 @@
+ ALTER FUNCTION [dbo].[fn_FormatWithCommas] 
+(
+    -- Add the parameters for the function here
+    @value varchar(50)
+)
+RETURNS varchar(50)
+AS
+BEGIN
+    -- Declare the return variable here
+
+    DECLARE @WholeNumber varchar(50) = NULL, @Decimal varchar(10) = '', @CharIndex int = charindex('.', @value)
+
+    IF (@CharIndex > 0)
+        SELECT @WholeNumber = SUBSTRING(@value, 1, @CharIndex-1), @Decimal = SUBSTRING(@value, @CharIndex, LEN(@value))
+    ELSE
+        SET @WholeNumber = @value
+        
+      IF(LEN(@WholeNumber) > 3)
+     SET @WholeNumber =SUBSTRING(@WholeNumber, 1, LEN(@WholeNumber)-3) + ',' + RIGHT(@WholeNumber, 3)
+     
+     IF(LEN(@WholeNumber) > 5)
+         SET @WholeNumber =SUBSTRING(@WholeNumber, 1, LEN(@WholeNumber)-6) + ',' + RIGHT(@WholeNumber, 6)   
+      
+    IF(LEN(@WholeNumber) > 9)
+       SET @WholeNumber =SUBSTRING(@WholeNumber, 1, LEN(@WholeNumber)-9) + ',' + RIGHT(@WholeNumber, 9)   
+      
+        
+    -- Return the result of the function
+    RETURN @WholeNumber + @Decimal
+
+END
+go 
+select dbo.fn_FormatWithCommas(9600000.00)
